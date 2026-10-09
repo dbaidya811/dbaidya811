@@ -1,0 +1,15 @@
+export { Navbar } from './Navbar';
+export { Hero } from './Hero';
+export { CapabilitiesSection } from './CapabilitiesSection';
+export { ContactModal } from './ContactModal';
+export { StrokeText } from './StrokeText';
+export { CapsuleNavbar } from './CapsuleNavbar';
+export { HeroSection } from './HeroSection';
+export { ProjectsSection } from './ProjectsSection';
+export { SkillsSection } from './SkillsSection';
+export { ExperienceSection } from './ExperienceSection';
+export { ContactSection } from './ContactSection';
+export { Footer } from './Footer';
+export { ProjectModal } from './ProjectModal';
+export { ResumeModal } from './ResumeModal';
+export { Brain3DBackground } from './Brain3DBackground';

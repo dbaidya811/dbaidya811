@@ -154,7 +154,7 @@ export const ContactSection: React.FC = () => {
                 >
                   <div className="flex items-center gap-2.5">
                     <Github className="w-4 h-4" />
-                    <span>GitHub (@deepbaidya)</span>
+                    <span>GitHub (@dbaidya811)</span>
                   </div>
                   <span className="text-slate-500 text-[11px]">Explore Repos ↗</span>
                 </a>
