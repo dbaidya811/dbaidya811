@@ -13,3 +13,8 @@ export { Footer } from './Footer';
 export { ProjectModal } from './ProjectModal';
 export { ResumeModal } from './ResumeModal';
 export { Brain3DBackground } from './Brain3DBackground';
+export { ReachoutSection } from './ReachoutSection';
+export { BackToTop } from './BackToTop';
+export { ContactPage } from './ContactPage';
+export { MeetingPage } from './MeetingPage';
+export { LicenseModal } from './LicenseModal';

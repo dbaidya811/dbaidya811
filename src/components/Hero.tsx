@@ -75,9 +75,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
         </defs>
       </svg>
 
-      {/* DESKTOP SVG: Fully opaque fills with bottom-right curve pocket framing the contact capsule */}
+      {/* DESKTOP SVG: Subtle translucency allowing 3D neural background to shine through */}
       <svg
-        className="hidden sm:block absolute inset-0 w-full h-full drop-shadow-xl z-10 pointer-events-none"
+        className="hidden sm:block absolute inset-0 w-full h-full drop-shadow-xl z-10 pointer-events-none opacity-90 dark:opacity-85"
         viewBox="0 0 1000 600"
         preserveAspectRatio="none"
       >
@@ -133,9 +133,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
         />
       </svg>
 
-      {/* MOBILE SVG: Fully opaque fills with compact bottom-right curve pocket framing the contact capsule */}
+      {/* MOBILE SVG: Subtle translucency allowing 3D neural background to shine through */}
       <svg
-        className="sm:hidden absolute inset-0 w-full h-full drop-shadow-xl z-10 pointer-events-none"
+        className="sm:hidden absolute inset-0 w-full h-full drop-shadow-xl z-10 pointer-events-none opacity-90 dark:opacity-85"
         viewBox="0 0 400 600"
         preserveAspectRatio="none"
       >

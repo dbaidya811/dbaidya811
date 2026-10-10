@@ -57,3 +57,58 @@ html.dark ::-webkit-scrollbar-thumb:hover {
     stroke-dashoffset: -100;
   }
 }
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  20%, 60% {
+    transform: rotate(14deg);
+  }
+  40%, 80% {
+    transform: rotate(-10deg);
+  }
+}
+
+.animate-wave {
+  animation: wave 2.2s infinite ease-in-out;
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shine-text {
+  background: linear-gradient(
+    90deg,
+    rgba(37, 99, 235, 0.45) 0%,
+    rgba(56, 189, 248, 0.85) 25%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(56, 189, 248, 0.85) 75%,
+    rgba(37, 99, 235, 0.45) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textShimmer 3.5s linear infinite;
+}
+
+html.dark .shine-text {
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.6) 0%,
+    rgba(56, 189, 248, 0.95) 25%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(56, 189, 248, 0.95) 75%,
+    rgba(59, 130, 246, 0.6) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textShimmer 3.5s linear infinite;
+}

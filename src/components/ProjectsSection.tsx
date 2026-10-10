@@ -198,11 +198,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenContact 
   return (
     <section
       id="Projects"
-      className="relative w-full py-16 xs:py-20 sm:py-24 md:py-28 overflow-hidden bg-white dark:bg-[#09090b] border-t border-zinc-200/80 dark:border-zinc-800/80 transition-colors duration-300"
+      className="relative w-full py-16 xs:py-20 sm:py-24 md:py-28 overflow-hidden bg-white/85 dark:bg-[#09090b]/85 backdrop-blur-[2px] border-t border-zinc-200/80 dark:border-zinc-800/80 transition-colors duration-300 z-20"
     >
       {/* Edge Fade Gradients for smooth horizontal scroll entry/exit */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 xs:w-12 sm:w-24 bg-gradient-to-r from-white dark:from-[#09090b] to-transparent z-20" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 xs:w-12 sm:w-24 bg-gradient-to-l from-white dark:from-[#09090b] to-transparent z-20" />
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-6 xs:w-12 sm:w-24 bg-gradient-to-r from-white/90 dark:from-[#09090b]/90 to-transparent z-20" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-6 xs:w-12 sm:w-24 bg-gradient-to-l from-white/90 dark:from-[#09090b]/90 to-transparent z-20" />
 
       {/* NORMAL SECTION HEADER */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">

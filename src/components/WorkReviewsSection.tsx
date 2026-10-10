@@ -60,7 +60,7 @@ export const WorkReviewsSection: React.FC<WorkReviewsSectionProps> = ({ onOpenCo
     <section
       id="Reviews"
       ref={sectionRef}
-      className="relative w-full py-8 xs:py-10 sm:py-20 md:py-24 overflow-hidden bg-white dark:bg-[#09090b] select-none border-t border-zinc-100 dark:border-zinc-850 transition-colors duration-300"
+      className="relative w-full py-8 xs:py-10 sm:py-20 md:py-24 overflow-hidden bg-white/80 dark:bg-[#09090b]/80 backdrop-blur-[2px] select-none border-t border-zinc-100 dark:border-zinc-850 transition-colors duration-300 z-20"
     >
       {/* Subtle Background Glow Elements */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[240px] sm:w-[500px] h-[240px] sm:h-[500px] bg-blue-500/4 dark:bg-blue-500/10 blur-[100px] sm:blur-[130px] rounded-full pointer-events-none -z-10" />
