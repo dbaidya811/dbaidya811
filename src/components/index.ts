@@ -2,7 +2,7 @@ export { Navbar } from './Navbar';
 export { Hero } from './Hero';
 export { CapabilitiesSection } from './CapabilitiesSection';
 export { ContactModal } from './ContactModal';
-export { StrokeText } from './StrokeText';
+export { WorkReviewsSection } from './WorkReviewsSection';
 export { CapsuleNavbar } from './CapsuleNavbar';
 export { HeroSection } from './HeroSection';
 export { ProjectsSection } from './ProjectsSection';

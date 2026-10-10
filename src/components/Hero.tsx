@@ -2,7 +2,6 @@ import React from 'react';
 import { Mail, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { StrokeText } from './StrokeText';
 
 interface HeroProps {
   onOpenContact: () => void;
@@ -21,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           initial={{ opacity: 0, scale: 0.94, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ type: 'spring', stiffness: 350, damping: 25, delay: 0.15 }}
-          className="group relative flex items-center justify-between gap-1.5 sm:gap-4 md:gap-5 pl-2 sm:pl-4.5 md:pl-5 pr-1.5 sm:pr-3 md:pr-3.5 py-1 sm:py-2.5 md:py-3.5 rounded-full bg-slate-950 text-white shadow-lg sm:shadow-2xl shadow-slate-950/40 border border-slate-800/90 cursor-pointer select-none ring-1 ring-black/10 min-w-0 sm:min-w-[350px] md:min-w-[400px] lg:min-w-[440px] max-w-[calc(100vw-20px)] transition-transform duration-200"
+          className="group relative flex items-center justify-between gap-1.5 sm:gap-4 md:gap-5 pl-2 sm:pl-4.5 md:pl-5 pr-1.5 sm:pr-3 md:pr-3.5 py-1 sm:py-2.5 md:py-3.5 rounded-full bg-slate-950 dark:bg-zinc-900 text-white shadow-lg sm:shadow-2xl shadow-slate-950/40 dark:shadow-black/70 border border-slate-800/90 dark:border-zinc-700/80 cursor-pointer select-none ring-1 ring-black/10 dark:ring-white/10 min-w-0 sm:min-w-[350px] md:min-w-[400px] lg:min-w-[440px] max-w-[calc(100vw-20px)] transition-transform duration-200"
           aria-label={`Contact: ${PERSONAL_INFO.email}`}
         >
           {/* Left: Mail icon in accent circle */}
@@ -65,6 +64,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             <stop offset="88%" stopColor="#1e3a8a" stopOpacity="1" />
             <stop offset="100%" stopColor="#08142c" stopOpacity="1" />
           </radialGradient>
+          <radialGradient id="heroBlueGlowDark" cx="50%" cy="38%" r="65%">
+            <stop offset="0%" stopColor="#1e293b" stopOpacity="1" />
+            <stop offset="16%" stopColor="#0f172a" stopOpacity="1" />
+            <stop offset="38%" stopColor="#0369a1" stopOpacity="1" />
+            <stop offset="68%" stopColor="#1e3a8a" stopOpacity="1" />
+            <stop offset="88%" stopColor="#0f172a" stopOpacity="1" />
+            <stop offset="100%" stopColor="#020617" stopOpacity="1" />
+          </radialGradient>
         </defs>
       </svg>
 
@@ -104,6 +111,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           stroke="#60a5fa"
           strokeWidth="1.2"
           strokeOpacity="0.8"
+          className="dark:hidden"
+        />
+        <path
+          d="M 16 0 
+             L 984 0 
+             Q 1000 0 1000 16 
+             L 1000 450 
+             Q 1000 472 976 472 
+             L 640 472 
+             C 570 472, 540 600, 470 600 
+             L 16 600 
+             Q 0 600 0 584 
+             L 0 16 
+             Q 0 0 16 0 Z"
+          fill="url(#heroBlueGlowDark)"
+          stroke="#38bdf8"
+          strokeWidth="1.2"
+          strokeOpacity="0.4"
+          className="hidden dark:block"
         />
       </svg>
 
@@ -126,6 +152,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
              L 0 12 
              Q 0 0 12 0 Z"
           fill="#1e3a8a"
+          className="dark:fill-[#0a1128]"
         />
         <path
           d="M 12 0 
@@ -143,12 +170,31 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           stroke="#60a5fa"
           strokeWidth="1.2"
           strokeOpacity="0.8"
+          className="dark:hidden"
+        />
+        <path
+          d="M 12 0 
+             L 388 0 
+             Q 400 0 400 12 
+             L 400 480 
+             Q 400 500 380 500 
+             L 225 500 
+             C 185 500, 165 600, 125 600 
+             L 12 600 
+             Q 0 600 0 588 
+             L 0 12 
+             Q 0 0 12 0 Z"
+          fill="url(#heroBlueGlowDark)"
+          stroke="#38bdf8"
+          strokeWidth="1.2"
+          strokeOpacity="0.4"
+          className="hidden dark:block"
         />
       </svg>
 
       {/* Ambient Center White Spotlight Aura */}
-      <div className="absolute top-[44%] sm:top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] sm:w-[480px] md:w-[600px] h-[90px] sm:h-[300px] bg-white/40 blur-[35px] sm:blur-[100px] rounded-full pointer-events-none z-15" />
-      <div className="absolute top-[44%] sm:top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] sm:w-[260px] h-[50px] sm:h-[160px] bg-white/55 blur-[25px] sm:blur-[60px] rounded-full pointer-events-none z-15" />
+      <div className="absolute top-[44%] sm:top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] sm:w-[480px] md:w-[600px] h-[90px] sm:h-[300px] bg-white/40 dark:bg-sky-400/10 blur-[35px] sm:blur-[100px] rounded-full pointer-events-none z-15" />
+      <div className="absolute top-[44%] sm:top-[36%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] sm:w-[260px] h-[50px] sm:h-[160px] bg-white/55 dark:bg-blue-400/15 blur-[25px] sm:blur-[60px] rounded-full pointer-events-none z-15" />
 
       {/* Hero Content */}
       <div className="relative z-20 w-full flex-1 flex flex-col items-center justify-center text-center px-3 sm:px-8 pt-8 xs:pt-9 sm:pt-20 pb-4 xs:pb-5 sm:pb-24 max-w-4xl mx-auto">
@@ -158,7 +204,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             initial={{ opacity: 0, y: -15, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/50 backdrop-blur-sm border border-white/70 text-slate-900 text-[8.5px] xs:text-[9.5px] sm:text-xs font-mono font-semibold tracking-wider uppercase shadow-sm"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/50 dark:bg-zinc-900/70 backdrop-blur-sm border border-white/70 dark:border-zinc-700/60 text-slate-900 dark:text-zinc-200 text-[8.5px] xs:text-[9.5px] sm:text-xs font-mono font-semibold tracking-wider uppercase shadow-sm"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse shrink-0" />
             <span className="whitespace-nowrap">Full-Stack Architect</span>
@@ -166,60 +212,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             <span className="whitespace-nowrap">MERN & Next.js</span>
           </motion.div>
 
-          {/* StrokeText Animated Heading: React Bits Component */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="w-full flex justify-center py-0.5"
+          {/* Main Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="font-['Outfit'] text-2xl xs:text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-950 dark:text-white tracking-tight leading-[1.12] max-w-2xl mx-auto drop-shadow-sm text-balance py-0.5"
           >
-            {/* Desktop StrokeText */}
-            <div className="hidden sm:block w-full max-w-2xl">
-              <StrokeText
-                text="Architecting Resilient Web Systems"
-                strokeColor="#1e3a8a"
-                fillColor="#020617"
-                strokeWidth={1.8}
-                drawDuration={1.5}
-                fillDelay={0.2}
-                stagger={0.035}
-                ease="power2.out"
-                trigger="mount"
-                fillMode="wipe"
-                fontSize={46}
-                fontWeight={800}
-                letterSpacing={-1.5}
-                className="font-['Outfit'] drop-shadow-sm"
-              />
-            </div>
-
-            {/* Mobile StrokeText */}
-            <div className="block sm:hidden w-full max-w-[320px]">
-              <StrokeText
-                text="Architecting Resilient Web Systems"
-                strokeColor="#1e3a8a"
-                fillColor="#020617"
-                strokeWidth={1.4}
-                drawDuration={1.3}
-                fillDelay={0.15}
-                stagger={0.025}
-                ease="power2.out"
-                trigger="mount"
-                fillMode="wipe"
-                fontSize={24}
-                fontWeight={800}
-                letterSpacing={-0.8}
-                className="font-['Outfit'] drop-shadow-sm"
-              />
-            </div>
-          </motion.div>
+            Architecting Resilient Web Systems
+          </motion.h1>
 
           {/* Value Proposition */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
-            className="font-['Plus_Jakarta_Sans'] text-[10px] xs:text-[11px] sm:text-base md:text-lg text-slate-800 font-normal max-w-xs sm:max-w-xl mx-auto leading-normal sm:leading-relaxed text-balance px-1"
+            className="font-['Plus_Jakarta_Sans'] text-[10px] xs:text-[11px] sm:text-base md:text-lg text-slate-800 dark:text-zinc-200 font-normal max-w-xs sm:max-w-xl mx-auto leading-normal sm:leading-relaxed text-balance px-1"
           >
             Specialized in React 19, Next.js 15, and Node.js microservices. Engineering low-latency APIs, robust distributed architectures, and intuitive digital experiences.
           </motion.p>

@@ -63,14 +63,10 @@ export const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({
     >
       {/* Section Header Text */}
       <div className="relative z-10 text-center max-w-2xl mx-auto mb-4 xs:mb-6 sm:mb-12 px-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/5 border border-slate-900/10 text-slate-800 text-[10px] xs:text-xs font-mono font-semibold tracking-wider uppercase mb-2 sm:mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
-          <span>Core Engineering Pillars</span>
-        </div>
-        <h2 className="font-['Outfit'] text-xl xs:text-2xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight">
+        <h2 className="font-['Outfit'] text-xl xs:text-2xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 dark:text-white tracking-tight leading-tight">
           System Architecture & Capabilities
         </h2>
-        <p className="font-['Plus_Jakarta_Sans'] text-xs sm:text-base text-slate-600 mt-1.5 sm:mt-3 leading-relaxed max-w-xl mx-auto">
+        <p className="font-['Plus_Jakarta_Sans'] text-xs sm:text-base text-slate-600 dark:text-zinc-400 mt-1.5 sm:mt-3 leading-relaxed max-w-xl mx-auto">
           Five core engineering competencies designed to build, scale, and secure modern web systems.
         </p>
       </div>
