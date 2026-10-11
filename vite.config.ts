@@ -4,7 +4,16 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  // On GitHub Pages this is a project repo (owner/repo), so the site is served
+  // from "/<repo>/". GitHub Actions sets GITHUB_ACTIONS + GITHUB_REPOSITORY,
+  // which we use to derive the correct base so asset URLs resolve. Locally we
+  // keep the default "/" so `npm run dev` behaves as before.
+  const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1];
+  const base =
+    process.env.GITHUB_ACTIONS === 'true' && repoName ? `/${repoName}/` : '/';
+
   return {
+    base,
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

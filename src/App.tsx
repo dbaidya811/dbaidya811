@@ -13,20 +13,16 @@ import {
   ReachoutSection,
   ContactModal,
   BackToTop,
-  ContactPage,
   MeetingPage,
   LicenseModal,
 } from './components';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'contact' | 'meeting'>(() => {
+  const [currentView, setCurrentView] = useState<'home' | 'meeting'>(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash.toLowerCase();
       if (hash === '#meeting' || hash === '#book' || hash === '#booking') {
         return 'meeting';
-      }
-      if (hash === '#contact') {
-        return 'contact';
       }
     }
     return 'home';
@@ -36,9 +32,6 @@ export default function App() {
       const hash = window.location.hash.toLowerCase();
       if (hash === '#meeting' || hash === '#book' || hash === '#booking') {
         return 'Book Call';
-      }
-      if (hash === '#contact') {
-        return 'Contact';
       }
     }
     return 'Home';
@@ -91,9 +84,6 @@ export default function App() {
       if (hash === '#meeting' || hash === '#book' || hash === '#booking') {
         setCurrentView('meeting');
         setActiveItem('Book Call');
-      } else if (hash === '#contact') {
-        setCurrentView('contact');
-        setActiveItem('Contact');
       } else {
         setCurrentView('home');
       }
@@ -102,7 +92,7 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const navItems = ['Home', 'Capabilities', 'Projects', 'Reviews', 'Contact', 'Book Call'];
+  const navItems = ['Home', 'Capabilities', 'Projects', 'Reviews', 'Book Call'];
 
   const scrollToSection = (id: string) => {
     setActiveItem(id);
@@ -129,15 +119,7 @@ export default function App() {
       return;
     }
 
-    if (id === 'Contact' || id === 'Hire Me') {
-      setCurrentView('contact');
-      setActiveItem('Contact');
-      window.location.hash = 'contact';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-
-    if (currentView === 'contact' || currentView === 'meeting') {
+    if (currentView === 'meeting') {
       setCurrentView('home');
       window.location.hash = '';
       setTimeout(() => {
@@ -151,8 +133,6 @@ export default function App() {
   const activeNavItem =
     currentView === 'meeting'
       ? 'Book Call'
-      : currentView === 'contact'
-      ? 'Contact'
       : activeItem;
 
   return (
@@ -169,20 +149,12 @@ export default function App() {
       {currentView === 'meeting' ? (
         <MeetingPage
           onBackToHome={() => handleNavigate('Home')}
-          onNavigateContact={() => handleNavigate('Contact')}
-          onOpenLicense={() => setLicenseModalOpen(true)}
-        />
-      ) : currentView === 'contact' ? (
-        <ContactPage
-          onBackToHome={() => handleNavigate('Home')}
-          onNavigateSection={(sectionId) => handleNavigate(sectionId)}
-          onNavigateMeeting={() => handleNavigate('Book Call')}
           onOpenLicense={() => setLicenseModalOpen(true)}
         />
       ) : (
         <>
           {/* 2. HERO CONTAINER */}
-          <Hero onOpenContact={() => handleNavigate('Contact')} />
+          <Hero />
 
           {/* 3. CAPABILITIES / SEMI-CIRCLE 5-CARD DECK */}
           <CapabilitiesSection
@@ -193,14 +165,13 @@ export default function App() {
           />
 
           {/* 4. FEATURED PROJECTS SECTION */}
-          <ProjectsSection onOpenContact={() => handleNavigate('Contact')} />
+          <ProjectsSection />
 
           {/* 5. WORK REVIEWS SECTION (Dual-Row Scroll-Linked Testimonials) */}
-          <WorkReviewsSection onOpenContact={() => handleNavigate('Contact')} />
+          <WorkReviewsSection />
 
           {/* 6. #5227FF REACHOUT BOX (Say Hello & Social Media Icons) */}
           <ReachoutSection
-            onOpenContact={() => handleNavigate('Contact')}
             onOpenMeeting={() => handleNavigate('Meeting')}
           />
 

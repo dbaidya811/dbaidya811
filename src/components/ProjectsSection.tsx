@@ -13,9 +13,7 @@ import {
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-interface ProjectsSectionProps {
-  onOpenContact?: () => void;
-}
+interface ProjectsSectionProps {}
 
 interface ProjectSkill {
   id: string; // tandpfun/skill-icons ID (e.g. 'react', 'ts', 'nodejs')
@@ -168,9 +166,11 @@ const PROJECTS: ProjectData[] = [
   },
 ];
 
-export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenContact }) => {
+export const ProjectsSection: React.FC<ProjectsSectionProps> = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [activeSkillByProject, setActiveSkillByProject] = useState<{ [projectId: string]: string }>({});
+
+  const mailtoHref = `mailto:${PERSONAL_INFO.email}?subject=Project%20Demo%20Request&body=Hi%20Deep,%0D%0A%0D%0AI'd%20like%20to%20request%20a%20demo%20for%20your%20project.%0D%0A%0D%0AProject%20of%20interest:%0D%0A`;
 
   // Wheel intercept: when scrolling vertically inside the projects track,
   // scroll horizontally from left to right instead of moving the entire page down!
@@ -342,14 +342,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onOpenContact 
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={onOpenContact}
+                <a
+                  href={mailtoHref}
+                  target="_self"
                   className="inline-flex items-center justify-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-slate-950 dark:bg-white text-white dark:text-black hover:bg-zinc-800 dark:hover:bg-zinc-200 active:scale-95 transition-all cursor-pointer shadow-sm shrink-0 self-start sm:self-auto"
                 >
                   <span>Contact for Demo</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
+                </a>
               </div>
             </div>
           );

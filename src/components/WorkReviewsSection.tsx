@@ -3,11 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'motion/react';
 import { Star, Quote, ArrowUpRight } from 'lucide-react';
 import { WORK_REVIEWS, WorkReview } from '../data/reviewsData';
 
-interface WorkReviewsSectionProps {
-  onOpenContact?: () => void;
-}
-
-export const WorkReviewsSection: React.FC<WorkReviewsSectionProps> = ({ onOpenContact }) => {
+export const WorkReviewsSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Track scroll position across the section
@@ -90,7 +86,7 @@ export const WorkReviewsSection: React.FC<WorkReviewsSectionProps> = ({ onOpenCo
             className="flex items-stretch gap-2.5 xs:gap-3 sm:gap-6 will-change-transform"
           >
             {topReviews.map((item: WorkReview, idx: number) => (
-              <ReviewCard key={`top-${item.id}-${idx}`} review={item} onOpenContact={onOpenContact} />
+              <ReviewCard key={`top-${item.id}-${idx}`} review={item} />
             ))}
           </motion.div>
         </div>
@@ -101,9 +97,9 @@ export const WorkReviewsSection: React.FC<WorkReviewsSectionProps> = ({ onOpenCo
             style={{ x: xBottom }}
             className="flex items-stretch gap-2.5 xs:gap-3 sm:gap-6 will-change-transform"
           >
-            {bottomReviews.map((item: WorkReview, idx: number) => (
-              <ReviewCard key={`bottom-${item.id}-${idx}`} review={item} onOpenContact={onOpenContact} />
-            ))}
+{bottomReviews.map((item: WorkReview, idx: number) => (
+            <ReviewCard key={`bottom-${item.id}-${idx}`} review={item} />
+          ))}
           </motion.div>
         </div>
       </div>
@@ -114,13 +110,11 @@ export const WorkReviewsSection: React.FC<WorkReviewsSectionProps> = ({ onOpenCo
 
 interface ReviewCardProps {
   review: WorkReview;
-  onOpenContact?: () => void;
 }
 
-const ReviewCard: React.FC<ReviewCardProps> = ({ review, onOpenContact }) => {
+const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
   return (
     <div
-      onClick={onOpenContact}
       className={`group relative w-[210px] xs:w-[235px] sm:w-[350px] md:w-[410px] shrink-0 p-3 xs:p-3.5 sm:p-5 md:p-6.5 rounded-xl xs:rounded-2xl sm:rounded-3xl cursor-pointer select-none
         /* Default State: NO COLOR (monochrome grayscale & muted contrast) */
         grayscale contrast-[0.95] opacity-75 bg-zinc-50/90 dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800/80 text-zinc-600 dark:text-zinc-400 shadow-sm

@@ -4,19 +4,15 @@ import { Calendar, ArrowUpRight, Mail } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface ReachoutSectionProps {
-  onOpenContact?: () => void;
   onOpenMeeting?: () => void;
 }
 
 export const ReachoutSection: React.FC<ReachoutSectionProps> = ({
-  onOpenContact,
   onOpenMeeting,
 }) => {
   const handleMeetingBooking = () => {
     if (onOpenMeeting) {
       onOpenMeeting();
-    } else if (onOpenContact) {
-      onOpenContact();
     } else {
       window.location.href = `mailto:${PERSONAL_INFO.email}?subject=Schedule%20a%20Meeting%20with%20Deep%20Baidya&body=Hi%20Deep,%0D%0A%0D%0AI'd%20love%20to%20book%20a%20quick%2015-30%20min%20meeting%20with%20you.%0D%0A%0D%0ATopic:%0D%0APreferred%20Date%20&%20Time:`;
     }

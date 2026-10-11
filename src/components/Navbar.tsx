@@ -89,19 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
 
             {/* "Hire Me" Button inside nav (Desktop - WHITE background) */}
-            <motion.button
-              type="button"
-              onClick={() => handleItemClick('Contact')}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              className={`relative ml-1.5 px-4 py-1.5 text-xs font-semibold rounded-full transition-all whitespace-nowrap shadow-md z-10 shrink-0 cursor-pointer ${
-                activeItem === 'Hire Me' || activeItem === 'Contact'
-                  ? 'bg-white text-black ring-2 ring-white/60'
-                  : 'bg-white text-black hover:bg-zinc-100 active:scale-95'
-              }`}
-            >
-              Hire Me
-            </motion.button>
+            {/* Removed - no longer needed */}
           </div>
 
           {/* Mobile Right Controls: Hamburger Toggle */}
@@ -203,19 +191,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </span>
                 </button>
               )}
-
-              {/* Hire Me in Mobile List */}
-              <button
-                type="button"
-                onClick={() => handleItemClick('Contact')}
-                className={`w-full py-2 px-3.5 rounded-xl text-center text-xs font-semibold transition-colors mt-1 cursor-pointer ${
-                  activeItem === 'Hire Me' || activeItem === 'Contact'
-                    ? 'bg-white text-black ring-2 ring-white/50'
-                    : 'bg-white text-black hover:bg-zinc-100'
-                }`}
-              >
-                Hire Me
-              </button>
             </div>
           </motion.div>
         )}

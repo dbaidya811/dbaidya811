@@ -3,23 +3,17 @@ import { Mail, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-interface HeroProps {
-  onOpenContact: () => void;
-}
+interface HeroProps {}
 
-export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
+export const Hero: React.FC<HeroProps> = () => {
+  const mailtoHref = `mailto:${PERSONAL_INFO.email}?subject=Hello%20Deep!&body=Hi%20Deep,%0D%0A%0D%0AI'd%20love%20to%20connect%20with%20you%20about...`;
   return (
     <section className="relative w-full flex-none sm:flex-1 h-[275px] xs:h-[300px] sm:h-auto min-h-0 sm:min-h-[580px] md:min-h-[calc(100vh-10px)] overflow-hidden select-none flex flex-col justify-between">
       {/* 3. CAPSULE CONTACT BUTTON WITH ARROW (Z-30) */}
       <div className="absolute bottom-1.5 xs:bottom-2 sm:bottom-3.5 md:bottom-5 lg:bottom-6 right-1.5 xs:right-2 sm:right-4 md:right-7 lg:right-9 z-30 pointer-events-auto">
-        <motion.button
-          type="button"
-          onClick={onOpenContact}
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.98 }}
-          initial={{ opacity: 0, scale: 0.94, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ type: 'spring', stiffness: 350, damping: 25, delay: 0.15 }}
+        <a
+          href={mailtoHref}
+          target="_self"
           className="group relative flex items-center justify-between gap-1.5 sm:gap-4 md:gap-5 pl-2 sm:pl-4.5 md:pl-5 pr-1.5 sm:pr-3 md:pr-3.5 py-1 sm:py-2.5 md:py-3.5 rounded-full bg-slate-950 dark:bg-zinc-900 text-white shadow-lg sm:shadow-2xl shadow-slate-950/40 dark:shadow-black/70 border border-slate-800/90 dark:border-zinc-700/80 cursor-pointer select-none ring-1 ring-black/10 dark:ring-white/10 min-w-0 sm:min-w-[350px] md:min-w-[400px] lg:min-w-[440px] max-w-[calc(100vw-20px)] transition-transform duration-200"
           aria-label={`Contact: ${PERSONAL_INFO.email}`}
         >
@@ -50,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           <div className="w-5.5 h-5.5 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full bg-white/10 text-white flex items-center justify-center shrink-0 border border-white/10 shadow-inner">
             <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </div>
-        </motion.button>
+        </a>
       </div>
 
       {/* SVG DEFINITIONS */}
